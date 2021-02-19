@@ -1,9 +1,9 @@
 // Set imports/dependancies
 const inquirer = require('inquirer');
 const { choices } = require('yargs');
-const Intern = require('./lib/Intern');
-const Manager = requier('./lib/Manager');
-const Engineer = requier('./lib/Engineer');
+// const Intern = require('./lib/Intern');
+// const Manager = requier('./lib/Manager');
+// const Engineer = requier('./lib/Engineer');
 
 // this module will run the inquirer prompts and then generate the template based on the users input.
 
@@ -37,10 +37,9 @@ const teamManagerQuestions = [
     },
     {
         // additional team members?
-        type: "list",
+        type: "confirm",
         name: "otherMembers",
-        message: 'Select one of the following choices to add additional team members.  If no additional team members to add please select: "FINISH TEAM".  ',
-        choices: ["Engineer", "Intern", "FINISH TEAM"]
+        message: 'Would you like to add additional team members?  If you are finished building your team select: "N"  ',
     }
 ];
 
@@ -73,6 +72,16 @@ const employeeQuestions = [
     },
 ];
 
+
+function promptUser() {
+    inquirer
+        .prompt(teamManagerQuestions)
+        .then(data => {
+            console.log(data); 
+        })
+};
+
+promptUser();
 
 // if role = Engineer then ask for their github username
 
