@@ -7,6 +7,9 @@ const { choices } = require('yargs');
 
 // this module will run the inquirer prompts and then generate the template based on the users input.
 
+// append newly constructed objects to this array.  A forEach() method or for loop will create a DOM element (card) for each of the objects in this array.
+let team = [];
+
 // inquirer questions:
 
 // user is first prompted to enter the information for thier team manager
@@ -76,9 +79,21 @@ const employeeQuestions = [
 function promptUser() {
     inquirer
         .prompt(teamManagerQuestions)
-        .then(data => {
-            console.log(data); 
+        .then((data) => {
+            if (data.otherMembers = true) {
+                inquirer.prompt(employeeQuestions);
+                return data;
+            } else {
+                return data;
+            }
         })
+        .then(console.log(data))
+        .catch(console.log(error));
+
+
+    // .then(data => {
+    //     console.log(data); 
+    // })
 };
 
 promptUser();
@@ -86,3 +101,14 @@ promptUser();
 // if role = Engineer then ask for their github username
 
 // if role is intern then ask for the intern's school
+
+// copy the style sheet from src and add to dist.
+function copyStyle() {
+fs.copyFile('./src/style.css', './dist/style.css', err => {
+    if (err) {
+        console.log(err);
+        return;
+    }
+    console.log('Style sheet copied successfully!');
+});
+};
