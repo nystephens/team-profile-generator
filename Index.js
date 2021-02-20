@@ -2,6 +2,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const { choices } = require('yargs');
+const generator = require('./src/generator');
 // const Intern = require('./lib/Intern');
 // const Manager = requier('./lib/Manager');
 // const Engineer = requier('./lib/Engineer');

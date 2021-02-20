@@ -1,4 +1,5 @@
 const fs = require('fs');
+const
 
 function generateEmployeeCards(array) {
     array.forEach(element => {
@@ -80,7 +81,7 @@ function generateHTML() {
         <main class="container">
     
             <!-- Team Member Cards -->
-            ${generateEmployeeCards}
+            ${generateEmployeeCards(array)}
     
         </main>
     
@@ -101,7 +102,24 @@ function generateHTML() {
     `
 };
 
+const writeFile = fileContent => {
+    return new Promise((resolve, reject) =>{
+        fs.writeFile('./dist/index.html', fileContent, err => {
+            // if there is an error reject promise and send error to the Promise's .catch method
+            if (err) {
+                reject(err);
+                // return out of the function here to make sure the Promise doesnt accidentally execute the resolve function as well
+                return;
+            }
 
+            // if everything went well, resolve the Promise and send the successful data to the .then method
+            resolve({
+                ok: true,
+                message: 'File created!'
+            });
+        });
+    });
+};
 
 // copy the style sheet from src and add to dist.
 function copyStyle() {
@@ -113,3 +131,6 @@ function copyStyle() {
         console.log('Style sheet copied successfully!');
     });
 };
+
+
+module.exports = generateHTML;
