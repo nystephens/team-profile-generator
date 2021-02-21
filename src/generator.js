@@ -11,7 +11,7 @@ function generateEmployeeCards(array) {
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID # : <span class="id-number"> ${element.id} </span></li>
-                    <li class="list-group-item">Email : <span class="email"></span> ${element.email} </li>
+                    <li class="list-group-item">Email : <span class="email"></span><a href="mailto:${element.email}">${element.email}</a></li>
                     <li class="list-group-item">Office Number: <span class="other-info"> ${element.officeNumber} </span></li>
                 </ul>
             </div>
@@ -26,8 +26,8 @@ function generateEmployeeCards(array) {
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID # : <span class="id-number"> ${element.id} </span></li>
-                    <li class="list-group-item">Email : <span class="email"></span> ${element.email} </li>
-                    <li class="list-group-item">Github: <span class="other-info"> ${element.github} </span></li>
+                    <li class="list-group-item">Email : <span class="email"></span><a href="mailto:${element.email}">${element.email}</a></li>
+                    <li class="list-group-item">Github: <span class="other-info"> <a href="github.com/${element.github}" target="_blank">${element.github}</a></span></li>
                 </ul>
             </div>
             <br><br>`;
@@ -41,7 +41,7 @@ function generateEmployeeCards(array) {
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID # : <span class="id-number"> ${element.id} </span></li>
-                    <li class="list-group-item">Email : <span class="email"></span> ${element.email} </li>
+                    <li class="list-group-item">Email : <span class="email"></span><a href="mailto:${element.email}">${element.email}</a></li>
                     <li class="list-group-item">School : <span class="other-info"> ${element.school}</span></li>
                 </ul>
             </div>
