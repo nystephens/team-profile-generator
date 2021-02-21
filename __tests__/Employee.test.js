@@ -2,7 +2,7 @@ const { TestScheduler } = require('jest');
 const Employee = require('../lib/Employee');
 
 // test for employee name, id, and email
-test ('checks to see if employee name is string', ()=> {
+test ('checks validity of Employee parameters: name, id, email', ()=> {
     const employee = new Employee('Nate', '564', 'nate@nate.com');
     
     expect(employee.name).toBe('Nate');
@@ -11,7 +11,7 @@ test ('checks to see if employee name is string', ()=> {
 });
 
 // test for employee name, id, and email
-test ('checks to see if employee name is string', ()=> {
+test ('checks validity of Employee methods: getName, getId, getEmail, and getRole', ()=> {
     const employee = new Employee('Nate', '564', 'nate@nate.com');
     
     expect(employee.getName()).toBe('Nate');
