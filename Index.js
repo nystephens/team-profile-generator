@@ -56,25 +56,25 @@ const engineerQuestions = [
         // ask for employee's name
         type: "input",
         name: "name",
-        message: "What is the name of this employee?  "
+        message: "What is the name of this engineer?  "
     },
     {
         // employee id
         type: "input",
         name: "id",
-        message: "Please enter the employee's ID:  "
+        message: "Please enter the engineer's ID:  "
     },
     {
         // email
         type: "input",
         name: "email",
-        message: "Please enter the employee's email address:  "
+        message: "Please enter the engineer's email address:  "
     },
     {
         // github
         type: "input",
         name: "github",
-        message: "Please enter the employee's github username:  "
+        message: "Please enter the engineer's github username:  "
     }
 ];
 
@@ -114,7 +114,7 @@ function addEngineer() {
 
             addMoreMembers();
         })
-}
+};
 
 function addIntern() {
     inquirer
@@ -125,7 +125,7 @@ function addIntern() {
 
             addMoreMembers();
         })
-}
+};
 
 function addMoreMembers() {
     inquirer
@@ -142,21 +142,21 @@ function addMoreMembers() {
                     break;
             }
         });
-}
+};
 
 function promptUser() {
     inquirer
         .prompt(teamManagerQuestions)
-        .then((data) => {
-            let manager = new Manager(data.name, data.id, data.email, data.officeNumber);
-            team.push(manager);
+        .then(data => {
+            // let manager = new Manager(data.name, data.id, data.email, data.officeNumber);
+            // team.push(manager);
 
-            addMoreMembers();
+            // addMoreMembers();
             console.log(data); 
         })
-        .catch(console.log(error));
+        // .catch(console.log(error));
 
-        // trying to get inquirer to work right / get page to generate
+        // trying to get inquirer to work right before I get page to generate
 
         // .then(pageHTML => { 
         //     return generateHTML(pageHTML); 
@@ -166,8 +166,4 @@ function promptUser() {
 };
 
 promptUser();
-
-// if role = Engineer then ask for their github username
-
-// if role is intern then ask for the intern's school
 

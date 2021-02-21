@@ -16,7 +16,10 @@ function generateEmployeeCards(array) {
                 </ul>
             </div>
             <br><br>`;
-            
+
+            // should I be pushing this card to array? prolly..
+                array.push(managerCard);
+
                 break;
 
             case "Engineer":
@@ -31,6 +34,8 @@ function generateEmployeeCards(array) {
                 </ul>
             </div>
             <br><br>`;
+
+            array.push(engineerCard);
 
                 break;
 
@@ -47,9 +52,8 @@ function generateEmployeeCards(array) {
             </div>
             <br><br>`;
 
-                break;
+            array.push(internCard);
 
-            default:
                 break;
         }
 
@@ -83,7 +87,7 @@ function generateHTML() {
         <main class="container">
     
             <!-- Team Member Cards -->
-            ${generateEmployeeCards(array)}
+            ${JSON.stringify(generateEmployeeCards(array))}
     
         </main>
     
