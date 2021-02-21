@@ -1,11 +1,11 @@
 const fs = require('fs');
-const
+const Index = require('../Index');
 
 function generateEmployeeCards(array) {
     array.forEach(element => {
         switch (element.getRole()) {
             case "Manager":
-                let card = `<div class="card">
+                let managerCard = `<div class="card">
                 <div class="card-header bg-info">
                     ${element.name}
                 </div>
@@ -15,12 +15,12 @@ function generateEmployeeCards(array) {
                     <li class="list-group-item">Office Number: <span class="other-info"> ${element.officeNumber} </span></li>
                 </ul>
             </div>
-            <br><br>`
-
+            <br><br>`;
+            
                 break;
 
             case "Engineer":
-                let card = `<div class="card">
+                let engineerCard = `<div class="card">
                 <div class="card-header bg-info">
                     ${element.name}
                 </div>
@@ -30,11 +30,12 @@ function generateEmployeeCards(array) {
                     <li class="list-group-item">Github: <span class="other-info"> ${element.github} </span></li>
                 </ul>
             </div>
-            <br><br>`
+            <br><br>`;
+
                 break;
 
             case "Intern":
-                let card = `<div class="card">
+                let internCard = `<div class="card">
                 <div class="card-header bg-info">
                     ${element.name}
                 </div>
@@ -44,7 +45,8 @@ function generateEmployeeCards(array) {
                     <li class="list-group-item">School : <span class="other-info"> ${element.school}</span></li>
                 </ul>
             </div>
-            <br><br>`
+            <br><br>`;
+
                 break;
 
             default:

@@ -3,9 +3,10 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const { choices } = require('yargs');
 const generator = require('./src/generator');
-// const Intern = require('./lib/Intern');
-// const Manager = requier('./lib/Manager');
-// const Engineer = requier('./lib/Engineer');
+const Intern = require('./lib/Intern');
+const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const generateHTML = require('./src/generator');
 
 // this module will run the inquirer prompts and then generate the template based on the users input.
 
@@ -140,7 +141,6 @@ function addMoreMembers() {
                     addIntern();
                     break;
                 case "Finish Team":
-
                     break;
             }
         });
@@ -155,6 +155,10 @@ function promptUser() {
 
             addMoreMembers();
         })
+        .then(pageHTML => { 
+            return generateHTML(pageHTML); 
+        })
+        .then(console.log(pageHTML))
         .catch(console.log(error));
 
 
