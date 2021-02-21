@@ -1,8 +1,7 @@
-// Set imports/dependancies
+// imports/dependancies
 const fs = require('fs');
 const inquirer = require('inquirer');
 const { choices } = require('yargs');
-const generator = require('./src/generator');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
@@ -43,6 +42,7 @@ const teamManagerQuestions = [
     }
 ];
 
+// questions for additional employees
 const moreMembers = [{
     // additional team members?
     type: "list",
@@ -51,8 +51,6 @@ const moreMembers = [{
     choices: ["Engineer", "Intern", "Finish Team"]
 }];
 
-
-// questions for additional employees
 const engineerQuestions = [
     {
         // ask for employee's name
@@ -154,17 +152,17 @@ function promptUser() {
             team.push(manager);
 
             addMoreMembers();
+            console.log(data); 
         })
-        .then(pageHTML => { 
-            return generateHTML(pageHTML); 
-        })
-        .then(console.log(pageHTML))
         .catch(console.log(error));
 
+        // trying to get inquirer to work right / get page to generate
 
-    // .then(data => {
-    //     console.log(data); 
-    // })
+        // .then(pageHTML => { 
+        //     return generateHTML(pageHTML); 
+        // })
+        // .then(console.log(pageHTML))
+        // .catch(console.log(error));
 };
 
 promptUser();

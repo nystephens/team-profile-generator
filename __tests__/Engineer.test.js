@@ -9,6 +9,7 @@ test ('checks validity of Engineer parameters: name, id, email, and github', ()=
     expect(engineer.id).toBe('564');
     expect(engineer.email).toBe('nate@nate.com');
     expect(engineer.github).toBe('nystephens');
+
 });
 
 // test for Engineer getname, getid,  getemail, and getgithub methods 

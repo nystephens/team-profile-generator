@@ -104,6 +104,7 @@ function generateHTML() {
     `
 };
 
+// write file to dist
 const writeFile = fileContent => {
     return new Promise((resolve, reject) =>{
         fs.writeFile('./dist/index.html', fileContent, err => {

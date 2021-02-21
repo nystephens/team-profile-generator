@@ -20,7 +20,7 @@ The user enters information about their team members when they are prompted by i
 
 2.  In your terminal navigate to the directory you wish to house this repository.   
 
-3.  Type “git clone” into your command line and paste the SSH key you copied from the repository, then hit Enter.  A new file titled “readme-generator” containing the necessary files will appear in your chosen directory.  Due to file size, Node.js and is necessary  modules will not be cloned to your repository.  Please continue reading the instructions to find out how to install these modules on your computer.  
+3.  Type “git clone” into your command line and paste the SSH key you copied from the repository, then hit Enter.  A new folder titled “team-profile-generator” containing the necessary files will appear in your chosen directory.  Due to file size, Node.js and is necessary  modules will not be cloned to your repository.  Please continue reading the instructions to find out how to install these modules on your computer.  
 
 4.  Since this application uses Node.js you will have to install Node and the required Node modules to operate it.  For detailed instructions on how  to install Node.js to your computer please visit: https://www.guru99.com/download-install-node-js.html  
 
@@ -28,7 +28,7 @@ The user enters information about their team members when they are prompted by i
 
 6.  Type the following command to install the proper node modules: “npm install”.  
 
-7.  Check your newly downloaded “node_modules” folder to ensure that the correct packages have been installed.  The only dependency that is not included within the general Node module package is “inquirer”.  If this package is not present within your Node modules then run the command “npm install inquirer” to install it.  
+7.  Check your newly downloaded “node_modules” folder to ensure that the correct packages have been installed.  The only dependency required to run this app that is not included within the general Node module package is “inquirer”.  If this package is not present within your Node modules then run the command “npm install inquirer” to install it.  This app uses jest as its test script.  For testing please see the "Tests" section of this README in order to properly install and run jest. 
 
 8.  Once you have cloned the repository and downloaded Node.js and its necessary modules you are ready to use the Team Profile Generator!  
 
