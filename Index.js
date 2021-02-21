@@ -19,19 +19,19 @@ const teamManagerQuestions = [
     {
         // team manager question: name
         type: "input",
-        name: "name",
+        name: "managerName",
         message: "What is the Team Manager's name?  "
     },
     {
         // team manager question: id
         type: "input",
-        name: "id",
+        name: "managerId",
         message: "Please enter the Team Manager's ID:  "
     },
     {
         // team manager question: email
         type: "input",
-        name: "email",
+        name: "managerEmail",
         message: "Please enter the Team Manager's email address:  "
     },
     {
@@ -55,25 +55,25 @@ const engineerQuestions = [
     {
         // ask for employee's name
         type: "input",
-        name: "name",
+        name: "engineerName",
         message: "What is the name of this employee?  "
     },
     {
         // employee id
         type: "input",
-        name: "id",
+        name: "engineerId",
         message: "Please enter the employee's ID:  "
     },
     {
         // email
         type: "input",
-        name: "email",
+        name: "engineerEmail",
         message: "Please enter the employee's email address:  "
     },
     {
         // github
         type: "input",
-        name: "github",
+        name: "engineerGitHub",
         message: "Please enter the employee's github username:  "
     }
 ];
@@ -82,25 +82,25 @@ const internQuestions = [
     {
         // ask for employee's name
         type: "input",
-        name: "name",
+        name: "internName",
         message: "What is the name of this intern?  "
     },
     {
         // employee id
         type: "input",
-        name: "id",
+        name: "internId",
         message: "Please enter the intern's ID:  "
     },
     {
         // email
         type: "input",
-        name: "email",
+        name: "internEmail",
         message: "Please enter the intern's email address:  "
     },
     {
         // school
         type: "input",
-        name: "school",
+        name: "inernSchool",
         message: "Please enter the intern's school name:  "
     }
 ];
@@ -109,7 +109,7 @@ function addEngineer() {
     inquirer
         .prompt(engineerQuestions)
         .then((data) => {
-            let engineer = new Engineer(data.name, data.id, data.email, data.github);
+            let engineer = new Engineer(data.engineerName, data.engineerId, data.engineerEmail, data.engineeGitHub);
             team.push(engineer);
 
             addMoreMembers();
@@ -120,7 +120,7 @@ function addIntern() {
     inquirer
         .prompt(internQuestions)
         .then((data) => {
-            let intern = new Intern(data.name, data.id, data.email, data.school);
+            let intern = new Intern(data.internName, data.internId, data.internEmail, data.internSchool);
             team.push(intern);
 
             addMoreMembers();
@@ -148,7 +148,7 @@ function promptUser() {
     inquirer
         .prompt(teamManagerQuestions)
         .then((data) => {
-            let manager = new Manager(data.name, data.id, data.email, data.officeNumber);
+            let manager = new Manager(data.managerName, data.managerId, data.managerEmail, data.officeNumber);
             team.push(manager);
 
             addMoreMembers();
