@@ -159,8 +159,9 @@ function promptUser() {
             addMoreMembers(); 
 
             console.log(data);
+            console.log("First .then engaged!");
         })
-        .then(console.log("Second .then enganged!"));
+        .then(console.log("Second .then engaged!"));
         // .catch(console.log(error));
 
         // trying to get inquirer to work right before I get page to generate
