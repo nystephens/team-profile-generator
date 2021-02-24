@@ -112,6 +112,8 @@ function addEngineer() {
             let engineer = new Engineer(data.name, data.id, data.email, data.github);
             team.push(engineer);
 
+            // console.log(team);
+
             addMoreMembers();
         })
 };
@@ -122,6 +124,8 @@ function addIntern() {
         .then((data) => {
             let intern = new Intern(data.name, data.id, data.email, data.school);
             team.push(intern);
+
+            // console.log(team);
 
             addMoreMembers();
         })
@@ -139,6 +143,7 @@ function addMoreMembers() {
                     addIntern();
                     break;
                 case "Finish Team":
+                    console.log(team);
                     break;
             }
         });
@@ -152,10 +157,10 @@ function promptUser() {
             team.push(manager);
 
             addMoreMembers(); 
-        })
-        .then(data => {
+
             console.log(data);
         })
+        .then(console.log("Second .then enganged!"));
         // .catch(console.log(error));
 
         // trying to get inquirer to work right before I get page to generate
