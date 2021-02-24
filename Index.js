@@ -148,11 +148,13 @@ function promptUser() {
     inquirer
         .prompt(teamManagerQuestions)
         .then(data => {
-            // let manager = new Manager(data.name, data.id, data.email, data.officeNumber);
-            // team.push(manager);
+            let manager = new Manager(data.name, data.id, data.email, data.officeNumber);
+            team.push(manager);
 
-            // addMoreMembers();
-            console.log(data); 
+            addMoreMembers(); 
+        })
+        .then(data => {
+            console.log(data);
         })
         // .catch(console.log(error));
 

@@ -1,5 +1,4 @@
 const fs = require('fs');
-const Index = require('../Index');
 
 function generateEmployeeCards(array) {
     array.forEach(element => {
@@ -87,7 +86,7 @@ function generateHTML() {
         <main class="container">
     
             <!-- Team Member Cards -->
-            ${JSON.stringify(generateEmployeeCards(array))}
+            ${generateEmployeeCards(array)}
     
         </main>
     
@@ -101,7 +100,6 @@ function generateHTML() {
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
-        <script src="" async defer></script>
     </body>
     
     </html>
