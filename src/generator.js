@@ -1,7 +1,7 @@
 const fs = require('fs');
 
-function generateEmployeeCards(team) {
-    team.forEach(element => {
+function generateEmployeeCards(array) {
+    array.forEach(element => {
         switch (element.getRole()) {
             case "Manager":
                 let managerCard = `<div class="card">
@@ -16,8 +16,8 @@ function generateEmployeeCards(team) {
             </div>
             <br><br>`;
 
-            // should I be pushing this card to array? prolly..
-                team.push(managerCard);
+                // should I be pushing this card to array? prolly..
+                array.push(managerCard);
 
                 break;
 
@@ -34,7 +34,7 @@ function generateEmployeeCards(team) {
             </div>
             <br><br>`;
 
-            team.push(engineerCard);
+                array.push(engineerCard);
 
                 break;
 
@@ -51,7 +51,7 @@ function generateEmployeeCards(team) {
             </div>
             <br><br>`;
 
-            team.push(internCard);
+                array.push(internCard);
 
                 break;
         }
@@ -108,7 +108,7 @@ function generateHTML() {
 
 // write file to dist
 const writeFile = fileContent => {
-    return new Promise((resolve, reject) =>{
+    return new Promise((resolve, reject) => {
         fs.writeFile('./dist/index.html', fileContent, err => {
             // if there is an error reject promise and send error to the Promise's .catch method
             if (err) {
@@ -138,7 +138,7 @@ function copyStyle() {
 };
 
 
-module.exports = { 
+module.exports = {
     generateHTML,
     writeFile,
     copyStyle
