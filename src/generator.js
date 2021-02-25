@@ -1,7 +1,7 @@
 const fs = require('fs');
 
-function generateEmployeeCards(array) {
-    array.forEach(element => {
+function generateEmployeeCards(team) {
+    team.forEach(element => {
         switch (element.getRole()) {
             case "Manager":
                 let managerCard = `<div class="card">
@@ -17,7 +17,7 @@ function generateEmployeeCards(array) {
             <br><br>`;
 
             // should I be pushing this card to array? prolly..
-                array.push(managerCard);
+                team.push(managerCard);
 
                 break;
 
@@ -34,7 +34,7 @@ function generateEmployeeCards(array) {
             </div>
             <br><br>`;
 
-            array.push(engineerCard);
+            team.push(engineerCard);
 
                 break;
 
@@ -51,7 +51,7 @@ function generateEmployeeCards(array) {
             </div>
             <br><br>`;
 
-            array.push(internCard);
+            team.push(internCard);
 
                 break;
         }
@@ -86,7 +86,7 @@ function generateHTML() {
         <main class="container">
     
             <!-- Team Member Cards -->
-            ${generateEmployeeCards(array)}
+            ${generateEmployeeCards()}
     
         </main>
     
@@ -138,4 +138,8 @@ function copyStyle() {
 };
 
 
-module.exports = generateHTML;
+module.exports = { 
+    generateHTML,
+    writeFile,
+    copyStyle
+};

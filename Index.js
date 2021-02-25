@@ -156,22 +156,31 @@ function promptUser() {
             let manager = new Manager(data.name, data.id, data.email, data.officeNumber);
             team.push(manager);
 
-            addMoreMembers(); 
+            addMoreMembers();
 
             console.log(data);
             console.log("First .then engaged!");
         })
-        .then(console.log("Second .then engaged!"));
-        // .catch(console.log(error));
+        .then(pageHTML => {
+            return generateHTML(pageHTML);
+        })
+        .then(pageHTML => {
+            console.log(pageHTML);
+        });
+        // .then(data => {
+        //     console.log("Second .then engaged!");
+        // });
+    // .catch(console.log(error));
 
-        // trying to get inquirer to work right before I get page to generate
+    // trying to get inquirer to work right before I get page to generate
 
-        // .then(pageHTML => { 
-        //     return generateHTML(pageHTML); 
-        // })
-        // .then(console.log(pageHTML))
-        // .catch(console.log(error));
+    // .then(pageHTML => { 
+    //     return generateHTML(pageHTML); 
+    // })
+    // .then(console.log(pageHTML))
+    // .catch(console.log(error));
 };
 
 promptUser();
+
 
