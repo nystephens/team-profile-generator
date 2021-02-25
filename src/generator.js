@@ -1,5 +1,8 @@
 const fs = require('fs');
 
+// trying to resolve array not defined error
+// const array = ;
+
 function generateEmployeeCards(array) {
     array.forEach(element => {
         switch (element.getRole()) {
@@ -16,7 +19,6 @@ function generateEmployeeCards(array) {
             </div>
             <br><br>`;
 
-                // should I be pushing this card to array? prolly..
                 array.push(managerCard);
 
                 break;
@@ -86,7 +88,7 @@ function generateHTML() {
         <main class="container">
     
             <!-- Team Member Cards -->
-            ${generateEmployeeCards()}
+            ${generateEmployeeCards(array)}
     
         </main>
     

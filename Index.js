@@ -5,7 +5,9 @@ const { choices } = require('yargs');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
-const generateHTML = require('./src/generator');
+const {generateHTML} = require('./src/generator');
+
+let globalData;
 
 // this module will run the inquirer prompts and then generate the template based on the users input.
 
@@ -143,13 +145,15 @@ function addMoreMembers() {
                     addIntern();
                     break;
                 case "Finish Team":
-                    console.log(team);
+                    // console.log(team);
                     break;
             }
         });
 };
 
 function promptUser() {
+    
+
     inquirer
         .prompt(teamManagerQuestions)
         .then(data => {
@@ -160,27 +164,16 @@ function promptUser() {
 
             console.log(data);
             console.log("First .then engaged!");
-        })
-        .then(pageHTML => {
-            return generateHTML(pageHTML);
-        })
-        .then(pageHTML => {
-            console.log(pageHTML);
+            return generateHTML(data);
         });
-        // .then(data => {
+        // .then(pageHtml => {
+        //     return generateHTML(pageHtml);
+        //     console.log(pageHtml);
         //     console.log("Second .then engaged!");
         // });
     // .catch(console.log(error));
-
-    // trying to get inquirer to work right before I get page to generate
-
-    // .then(pageHTML => { 
-    //     return generateHTML(pageHTML); 
-    // })
-    // .then(console.log(pageHTML))
-    // .catch(console.log(error));
 };
 
-promptUser();
 
+promptUser();
 
