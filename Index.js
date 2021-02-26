@@ -7,6 +7,7 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const {generateHTML} = require('./src/generator');
 
+// setting a global value for our data?
 let globalData;
 
 // this module will run the inquirer prompts and then generate the template based on the users input.
@@ -145,8 +146,10 @@ function addMoreMembers() {
                     addIntern();
                     break;
                 case "Finish Team":
-                    // console.log(team);
+                    generateHTML(team);
                     break;
+                default:
+                    console.log('no employees');
             }
         });
 };
@@ -162,16 +165,16 @@ function promptUser() {
 
             addMoreMembers();
 
-            console.log(data);
-            console.log("First .then engaged!");
-            return generateHTML(data);
-        });
+            // console.log(data);
+            // console.log("First .then engaged!");
+            // return generateHTML(data);
+        })
+        .catch(error => console.log(error));
         // .then(pageHtml => {
         //     return generateHTML(pageHtml);
         //     console.log(pageHtml);
         //     console.log("Second .then engaged!");
         // });
-    // .catch(console.log(error));
 };
 
 
