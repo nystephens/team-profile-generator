@@ -37,7 +37,7 @@ The user enters information about their team members when they are prompted by i
 Created using Node.js, this application runs entirely within the command line.  To initiate the application first navigate to the correct directory in your terminal (see Installation Step 5), type the following command, and hit Enter:  “node Index.js”.  When the user runs the application in their terminal they are met with a set of prompts initiated by the inquirer module that ask the user to provide information for each of their team members.  The user is first asked for information about the team leader or manager.  Once manager info has been entered the user is prompted to add additional employees or finish team.  This application contains choices for two types of additonal employees: intern and engineer.  Once all the inquirer prompts have been answered by the user a file titled “index.html” is generated in the “dist” folder.  This file may be copied and pasted into any directory.  The generated HTML file will be available to edit after its initial creation. 
 
 For a demonstration of this application in use please watch this video:
-[Demonstration Video]()
+[Demonstration Video](chrome-extension://mmeijimgabbpbgpdklnllpncmdofkcpn/ng/app/app.html#/files/7db7af00-0f9c-4b2b-ya51-6cf530857369)
 
 ## License
 
