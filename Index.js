@@ -7,47 +7,34 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const { generateHTML, writeFile, copyStyle } = require('./src/generator');
 
-// setting a global value for our data?
-let globalData;
 
-// this module will run the inquirer prompts and then generate the template based on the users input.
-
-// append newly constructed objects to this array.  A forEach() method or for loop will create a DOM element (card) for each of the objects in this array.
 let team = [];
 
 // inquirer questions:
-
-// user is first prompted to enter the information for thier team manager
 const teamManagerQuestions = [
     {
-        // team manager question: name
         type: "input",
         name: "name",
         message: "What is the Team Manager's name?  "
     },
     {
-        // team manager question: id
         type: "input",
         name: "id",
         message: "Please enter the Team Manager's ID:  "
     },
     {
-        // team manager question: email
         type: "input",
         name: "email",
         message: "Please enter the Team Manager's email address:  "
     },
     {
-        // team manager question: office number
         type: "input",
         name: "officeNumber",
         message: "Please enter the Team Manager's office number:  "
     }
 ];
 
-// questions for additional employees
 const moreMembers = [{
-    // additional team members?
     type: "list",
     name: "otherMembers",
     message: 'Would you like to add additional team members?  If you are finished building your team select: "Finish Team"  ',
@@ -56,25 +43,21 @@ const moreMembers = [{
 
 const engineerQuestions = [
     {
-        // ask for employee's name
         type: "input",
         name: "name",
         message: "What is the name of this engineer?  "
     },
     {
-        // employee id
         type: "input",
         name: "id",
         message: "Please enter the engineer's ID:  "
     },
     {
-        // email
         type: "input",
         name: "email",
         message: "Please enter the engineer's email address:  "
     },
     {
-        // github
         type: "input",
         name: "github",
         message: "Please enter the engineer's github username:  "
@@ -83,25 +66,21 @@ const engineerQuestions = [
 
 const internQuestions = [
     {
-        // ask for employee's name
         type: "input",
         name: "name",
         message: "What is the name of this intern?  "
     },
     {
-        // employee id
         type: "input",
         name: "id",
         message: "Please enter the intern's ID:  "
     },
     {
-        // email
         type: "input",
         name: "email",
         message: "Please enter the intern's email address:  "
     },
     {
-        // school
         type: "input",
         name: "school",
         message: "Please enter the intern's school name:  "
@@ -115,8 +94,6 @@ function addEngineer() {
             let engineer = new Engineer(data.name, data.id, data.email, data.github);
             team.push(engineer);
 
-            // console.log(team);
-
             addMoreMembers();
         })
 };
@@ -127,8 +104,6 @@ function addIntern() {
         .then((data) => {
             let intern = new Intern(data.name, data.id, data.email, data.school);
             team.push(intern);
-
-            // console.log(team);
 
             addMoreMembers();
         })
