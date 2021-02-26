@@ -31,7 +31,7 @@ function generateEmployeeCards(array) {
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID # : <span class="id-number"> ${element.id} </span></li>
                     <li class="list-group-item">Email : <span class="email"></span><a href="mailto:${element.email}">${element.email}</a></li>
-                    <li class="list-group-item">Github: <span class="other-info"> <a href="github.com/${element.github}" target="_blank">${element.github}</a></span></li>
+                    <li class="list-group-item">Github: <span class="other-info"> <a href="https://github.com/${element.github}" target="_blank">${element.github}</a></span></li>
                 </ul>
             </div>
             <br><br>`;
