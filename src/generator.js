@@ -3,9 +3,11 @@ const fs = require('fs');
 // trying to resolve teamArray not defined error
 // const teamArray = ;
 
-function generateEmployeeCards(teamArray) {
+function generateEmployeeCards(array) {
+
     let teamArray = [];
-    teamArray.forEach(element => {
+
+    array.forEach(element => {
         switch (element.getRole()) {
             case "Manager":
                 let managerCard = `<div class="card">
@@ -63,7 +65,7 @@ function generateEmployeeCards(teamArray) {
         }
 
     });
-    
+
     return teamArray.join('');
 }
 
