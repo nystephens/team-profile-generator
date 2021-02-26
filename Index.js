@@ -5,7 +5,7 @@ const { choices } = require('yargs');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
-const { generateHTML } = require('./src/generator');
+const { generateHTML, writeFile, copyStyle } = require('./src/generator');
 
 // setting a global value for our data?
 let globalData;
@@ -146,7 +146,9 @@ function addMoreMembers() {
                     addIntern();
                     break;
                 case "Finish Team":
-                    generateHTML(team);
+                    let fileContent = generateHTML(team);
+                    writeFile(fileContent);
+                    copyStyle();
                     break;
                 default:
                     console.log('no employees');
@@ -163,17 +165,8 @@ function promptUser() {
             team.push(manager);
 
             addMoreMembers();
-
-            // console.log(data);
-            // console.log("First .then engaged!");
-            // return generateHTML(data);
         })
         .catch(error => console.log(error));
-    // .then(pageHtml => {
-    //     return generateHTML(pageHtml);
-    //     console.log(pageHtml);
-    //     console.log("Second .then engaged!");
-    // });
 };
 
 

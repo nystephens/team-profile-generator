@@ -61,7 +61,7 @@ function generateEmployeeCards(array) {
     });
 }
 
-function generateHTML() {
+function generateHTML(array) {
     return `<!DOCTYPE html>
     <html>
     
