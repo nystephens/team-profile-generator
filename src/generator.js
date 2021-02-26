@@ -1,10 +1,11 @@
 const fs = require('fs');
 
-// trying to resolve array not defined error
-// const array = ;
+// trying to resolve teamArray not defined error
+// const teamArray = ;
 
-function generateEmployeeCards(array) {
-    array.forEach(element => {
+function generateEmployeeCards(teamArray) {
+    let teamArray = [];
+    teamArray.forEach(element => {
         switch (element.getRole()) {
             case "Manager":
                 let managerCard = `<div class="card">
@@ -19,7 +20,7 @@ function generateEmployeeCards(array) {
             </div>
             <br><br>`;
 
-                array.push(managerCard);
+                teamArray.push(managerCard);
 
                 break;
 
@@ -36,7 +37,7 @@ function generateEmployeeCards(array) {
             </div>
             <br><br>`;
 
-                array.push(engineerCard);
+                teamArray.push(engineerCard);
 
                 break;
 
@@ -53,15 +54,20 @@ function generateEmployeeCards(array) {
             </div>
             <br><br>`;
 
-                array.push(internCard);
+                teamArray.push(internCard);
 
+                break;
+
+            default:
                 break;
         }
 
     });
+    
+    return teamArray.join('');
 }
 
-function generateHTML(array) {
+function generateHTML(teamArray) {
     return `<!DOCTYPE html>
     <html>
     
@@ -88,7 +94,7 @@ function generateHTML(array) {
         <main class="container">
     
             <!-- Team Member Cards -->
-            ${generateEmployeeCards(array)}
+            ${generateEmployeeCards(teamArray)}
     
         </main>
     
